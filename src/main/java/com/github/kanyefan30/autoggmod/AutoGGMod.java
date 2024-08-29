@@ -1,22 +1,14 @@
 package com.github.kanyefan30.autoggmod;
 
-import net.minecraft.client.Minecraft;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
+@Mod(modid = "AutoGGMod", useMetadata = true)
 public class AutoGGMod {
-    private final Minecraft mc = Minecraft.getMinecraft();
-    private boolean gameEnded = false;
-
-    @SubscribeEvent
-    public void onClientTick(TickEvent.ClientTickEvent event) {
-        if (mc.theWorld == null || mc.thePlayer == null) return;
-        String scoreboardText = ScoreboardReader.getScoreboard();
-        if (scoreboardText != null && scoreboardText.contains("Game ended!") && !gameEnded) {
-            mc.thePlayer.sendChatMessage("/achat gg");
-            gameEnded = true;
-        } else if (scoreboardText != null && !scoreboardText.contains("Game ended!")) {
-            gameEnded = false;
-        }
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent event) {
+        MinecraftForge.EVENT_BUS.register(new OnClientTick());
+        MinecraftForge.EVENT_BUS.register(this);
     }
 }
