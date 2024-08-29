@@ -10,14 +10,13 @@ public class AutoGGMod {
 
     @SubscribeEvent
     public void onClientTick(TickEvent.ClientTickEvent event) {
-        if (mc.theWorld != null && mc.thePlayer != null) {
-            String scoreboardText = ScoreboardReader.getScoreboard();
-            if (scoreboardText != null && scoreboardText.contains("Game ended!") && !gameEnded) {
-                mc.thePlayer.sendChatMessage("/achat gg");
-                gameEnded = true;
-            } else if (scoreboardText != null && !scoreboardText.contains("Game ended!")) {
-                gameEnded = false;
-            }
+        if (mc.theWorld == null || mc.thePlayer == null) return;
+        String scoreboardText = ScoreboardReader.getScoreboard();
+        if (scoreboardText != null && scoreboardText.contains("Game ended!") && !gameEnded) {
+            mc.thePlayer.sendChatMessage("/achat gg");
+            gameEnded = true;
+        } else if (scoreboardText != null && !scoreboardText.contains("Game ended!")) {
+            gameEnded = false;
         }
     }
 }
