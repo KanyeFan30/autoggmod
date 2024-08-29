@@ -1,8 +1,6 @@
 package com.github.kanyefan30.autoggmod;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.scoreboard.ScoreObjective;
-import net.minecraft.scoreboard.Scoreboard;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
@@ -13,9 +11,6 @@ public class AutoGGMod {
     @SubscribeEvent
     public void onClientTick(TickEvent.ClientTickEvent event) {
         if (mc.theWorld != null && mc.thePlayer != null) {
-            Scoreboard scoreboard = mc.theWorld.getScoreboard();
-            ScoreObjective objective = scoreboard.getObjectiveInDisplaySlot(1);
-
             String scoreboardText = ScoreboardReader.getScoreboard();
             if (scoreboardText != null && scoreboardText.contains("Game ended!") && !gameEnded) {
                 mc.thePlayer.sendChatMessage("/achat gg");
