@@ -4,7 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
-public class OnClientTick {
+public class AutoGGHandler {
     private final Minecraft mc = Minecraft.getMinecraft();
     private boolean gameEnded = false;
 
