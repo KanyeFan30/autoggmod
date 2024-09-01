@@ -1,5 +1,6 @@
 package com.github.kanyefan30.autoggmod;
 
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -10,5 +11,7 @@ public class AutoGGInitializer {
     public void init(FMLInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(new AutoGGHandler());
         MinecraftForge.EVENT_BUS.register(this);
+
+        ClientCommandHandler.instance.registerCommand(new AutoGGCommand());
     }
 }
