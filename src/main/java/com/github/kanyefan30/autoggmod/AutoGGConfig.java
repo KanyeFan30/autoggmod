@@ -1,10 +1,10 @@
 package com.github.kanyefan30.autoggmod;
 
 public class AutoGGConfig {
-    private static String message = "gg";
+    public static String message = "gg";
 
-    public static void setMessage(String message) {
-        message = message;
+    public static void setMessage(String newMessage) {
+        message = newMessage;
     }
 
     public static String getMessage() {

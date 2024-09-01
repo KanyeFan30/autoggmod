@@ -31,10 +31,10 @@ public class AutoGGCommand extends CommandBase {
                 AutoGGConfig.setMessage(args[0]);
             }
         } else {
-            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Usage:"));
+            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("§6Usage:"));
             Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("§6Change message: §r/autogg §3<message>"));
-            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("§Reset message: §r/autogg §3reset"));
-            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("§Get current message: §r/autogg"));
+            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("§6Reset message: §r/autogg §3reset"));
+            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("§6Get current message: §r/autogg"));
         }
     }
 }
