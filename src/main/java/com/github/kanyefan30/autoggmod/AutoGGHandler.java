@@ -12,10 +12,13 @@ public class AutoGGHandler {
     public void onClientTick(TickEvent.ClientTickEvent event) {
         if (mc.theWorld == null || mc.thePlayer == null) return;
         String scoreboardText = ScoreboardReader.getScoreboard();
-        if (scoreboardText != null && scoreboardText.contains("Game ended!") && !gameEnded) {
-            mc.thePlayer.sendChatMessage("/achat gg");
+        if (scoreboardText == null) return;
+
+        String message = AutoGGConfig.getMessage();
+        if (scoreboardText.contains("Game ended!") && !gameEnded) {
+            mc.thePlayer.sendChatMessage("/achat " + message);
             gameEnded = true;
-        } else if (scoreboardText != null && !scoreboardText.contains("Game ended!")) {
+        } else if (!scoreboardText.contains("Game ended!")) {
             gameEnded = false;
         }
     }
