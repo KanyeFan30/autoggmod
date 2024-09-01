@@ -23,7 +23,7 @@ public class AutoGGCommand extends CommandBase {
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
         if (args.length == 0) {
-            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("Current autogg message is set to §3" + AutoGGConfig.getMessage()));
+            Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("§6Current autogg message is set to §3" + AutoGGConfig.getMessage()));
         } else {
             if (Objects.equals(args[0], "reset")) {
                 AutoGGConfig.resetMessage();
