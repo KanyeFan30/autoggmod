@@ -21,6 +21,4 @@
  
   ![alt text](https://github.com/KanyeFan30/autoggmod/blob/master/src/main/get_message.png)
 
-  And here is in-game proof of the updated message:
-
   ![alt text](https://github.com/KanyeFan30/autoggmod/blob/master/src/main/ingame_proof.png)
