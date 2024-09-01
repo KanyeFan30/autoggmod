@@ -37,4 +37,9 @@ public class AutoGGCommand extends CommandBase {
             Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText("§6Get current message: §r/autogg"));
         }
     }
+
+    @Override
+    public boolean canCommandSenderUseCommand(ICommandSender sender) {
+        return true;
+    }
 }
