@@ -22,3 +22,6 @@
   ![alt text](https://github.com/KanyeFan30/autoggmod/blob/master/src/main/get_message.png)
 
   ![alt text](https://github.com/KanyeFan30/autoggmod/blob/master/src/main/ingame_proof.png)
+
+**Upcoming versions**
+* autogg config options will be available in a GUI screen
